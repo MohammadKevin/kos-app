@@ -20,14 +20,14 @@ const Navbar = () => {
     <nav className="fixed top-0 w-full bg-white/70 backdrop-blur-xl z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
             <span className="text-2xl font-black text-[#4A5568] tracking-tighter">KOS<span className="text-[#94A3B8]">FINDER</span></span>
           </motion.div>
-          
+
           <div className="hidden md:flex items-center space-x-10">
             {['Home', 'Kost', 'Tentang'].map((item) => (
               <a key={item} href="#" className="text-sm font-semibold text-gray-500 hover:text-black transition-colors relative group">
@@ -37,7 +37,7 @@ const Navbar = () => {
             ))}
             <div className="flex items-center space-x-3 ml-6">
               <button className="text-gray-900 font-bold text-sm px-5">Login</button>
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-gray-200"
@@ -59,7 +59,7 @@ const Navbar = () => {
 };
 
 const KostCard = ({ data, index }: { data: typeof DUMMY_KOST[0], index: number }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -68,11 +68,11 @@ const KostCard = ({ data, index }: { data: typeof DUMMY_KOST[0], index: number }
     className="group bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-gray-200 transition-all duration-500"
   >
     <div className="relative h-64 overflow-hidden">
-      <motion.img 
+      <motion.img
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.6 }}
-        src={data.image} 
-        alt={data.name} 
+        src={data.image}
+        alt={data.name}
         className="w-full h-full object-cover"
       />
       <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-gray-800 shadow-sm">
@@ -96,7 +96,7 @@ const KostCard = ({ data, index }: { data: typeof DUMMY_KOST[0], index: number }
           <p className="text-gray-400 text-[10px] font-bold uppercase tracking-tight">Mulai dari</p>
           <span className="text-gray-900 font-black text-xl">Rp {data.price}</span>
         </div>
-        <motion.button 
+        <motion.button
           whileHover={{ x: 5 }}
           className="bg-gray-900 text-white p-3 rounded-2xl"
         >
@@ -130,7 +130,7 @@ export default function LandingPage() {
               </h1>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -144,7 +144,7 @@ export default function LandingPage() {
                   className="w-full bg-transparent focus:outline-none text-gray-700 py-4 font-medium"
                 />
               </div>
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full md:w-auto bg-black text-white px-10 py-4 rounded-[24px] font-bold flex items-center justify-center transition-all"
@@ -154,7 +154,7 @@ export default function LandingPage() {
             </motion.div>
           </div>
         </div>
-        
+
         {/* Decorative Background Elements */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-gray-50 rounded-full blur-3xl opacity-70"></div>
@@ -171,7 +171,7 @@ export default function LandingPage() {
               { icon: <ShieldCheck />, title: "Keamanan Terjamin", desc: "Sistem pembayaran escrow yang melindungi dana Anda.", color: "bg-blue-50 text-blue-500" },
               { icon: <LayoutGrid />, title: "Filter Lengkap", desc: "Cari berdasarkan fasilitas, harga, hingga tipe kamar.", color: "bg-purple-50 text-purple-500" }
             ].map((feature, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -199,11 +199,11 @@ export default function LandingPage() {
               <h2 className="text-4xl font-black text-gray-900 mt-2">Rekomendasi Terpopuler</h2>
             </div>
             <button className="group flex items-center font-bold text-sm text-gray-900">
-              Lihat Semua Properti 
+              Lihat Semua Properti
               <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
             </button>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {DUMMY_KOST.map((kost, index) => (
               <KostCard key={kost.id} data={kost} index={index} />
@@ -213,7 +213,7 @@ export default function LandingPage() {
       </section>
 
       <section className="py-24 px-4">
-        <motion.div 
+        <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
@@ -230,7 +230,14 @@ export default function LandingPage() {
               </button>
             </div>
           </div>
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', size: '20px 20px' }}></div>
+
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
+              backgroundSize: "20px 20px",
+            }}
+          ></div>
         </motion.div>
       </section>
 
