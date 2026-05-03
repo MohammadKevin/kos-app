@@ -127,7 +127,7 @@ export default function LandingPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
+      <section id="home" className="relative pt-40 pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
