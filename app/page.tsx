@@ -180,7 +180,7 @@ export default function LandingPage() {
                 className="p-10 bg-white rounded-[32px] border border-gray-100 hover:border-gray-200 transition-colors"
               >
                 <div className={`w-14 h-14 ${feature.color} rounded-2xl flex items-center justify-center mb-8`}>
-                  {React.cloneElement(feature.icon as React.ReactElement, { size: 28 })}
+                  {React.cloneElement(feature.icon as React.ReactElement<any>, { size: 28 })}
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{feature.desc}</p>
