@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, MapPin, Star, ShieldCheck, Zap, LayoutGrid, Menu, X, ArrowRight } from 'lucide-react';
+import Link from "next/link";
 
 const DUMMY_KOST = [
   { id: 1, name: "Kost Mentari Kuningan", location: "Jakarta Selatan", price: "2.500.000", rating: 4.8, type: "Campur", image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=400" },
@@ -29,28 +30,41 @@ const Navbar = () => {
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-10">
-            {['Home', 'Kost', 'Tentang'].map((item) => (
-              <a key={item} href="#" className="text-sm font-semibold text-gray-500 hover:text-black transition-colors relative group">
-                {item}
+            {[
+              { name: "Home", id: "#home" },
+              { name: "Kost", id: "#listing" },
+              { name: "Tentang", id: "#tentang" },
+            ].map((item) => (
+              <a
+                key={item.name}
+                href={item.id}
+                className="text-sm font-semibold text-gray-500 hover:text-black transition-colors relative group"
+              >
+                {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all group-hover:w-full" />
               </a>
             ))}
             <div className="flex items-center space-x-3 ml-6">
-              <button className="text-gray-900 font-bold text-sm px-5">Login</button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-gray-200"
-              >
-                Register
-              </motion.button>
-            </div>
-          </div>
+              <Link href="/login" className="text-gray-900 font-bold text-sm px-5">
+                Login
+              </Link>
 
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-gray-600">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+              <Link href="/register">
+                <motion.span
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-gray-200 inline-block"
+                >
+                  Register
+                </motion.span>
+              </Link>
+            </div>
+
+            <div className="md:hidden">
+              <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-gray-600">
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -191,7 +205,7 @@ export default function LandingPage() {
       </section>
 
       {/* Listing Section */}
-      <section className="py-24">
+      <section id="listing" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
             <div>
@@ -211,6 +225,82 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      <section id="tentang" className="py-24 bg-[#F8F9FA]">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* HEADER */}
+    <div className="text-center max-w-2xl mx-auto mb-20">
+      <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
+        About Us
+      </span>
+      <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-4">
+        Tentang KosFinder
+      </h2>
+      <p className="mt-6 text-gray-500 leading-relaxed">
+        KosFinder hadir untuk mempermudah pencarian kost di Indonesia dengan pengalaman yang cepat, aman, dan transparan.
+      </p>
+    </div>
+
+    {/* CONTENT */}
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+      
+      {/* LEFT TEXT */}
+      <div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-6">
+          Cari Kost Tanpa Ribet
+        </h3>
+        <p className="text-gray-600 mb-6 leading-relaxed">
+          Kami memahami bahwa mencari kost bisa menjadi proses yang melelahkan.
+          Dengan KosFinder, kamu bisa menemukan berbagai pilihan kost dari berbagai kota
+          dengan informasi lengkap mulai dari harga, fasilitas, hingga lokasi.
+        </p>
+
+        <p className="text-gray-600 leading-relaxed">
+          Platform ini dirancang khusus untuk mahasiswa, pekerja, dan siapa saja
+          yang membutuhkan hunian nyaman dengan proses yang cepat dan praktis.
+        </p>
+      </div>
+
+      {/* RIGHT CARDS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+        <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <Zap className="mb-4" />
+          <h4 className="font-bold text-gray-900">Cepat</h4>
+          <p className="text-sm text-gray-500 mt-1">
+            Temukan kost dalam hitungan detik dengan pencarian pintar.
+          </p>
+        </div>
+
+        <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <ShieldCheck className="mb-4" />
+          <h4 className="font-bold text-gray-900">Aman</h4>
+          <p className="text-sm text-gray-500 mt-1">
+            Semua data kost telah diverifikasi untuk keamanan pengguna.
+          </p>
+        </div>
+
+        <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <MapPin className="mb-4" />
+          <h4 className="font-bold text-gray-900">Akurat</h4>
+          <p className="text-sm text-gray-500 mt-1">
+            Lokasi jelas dan detail untuk memudahkan kamu memilih.
+          </p>
+        </div>
+
+        <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+          <Star className="mb-4" />
+          <h4 className="font-bold text-gray-900">Terpercaya</h4>
+          <p className="text-sm text-gray-500 mt-1">
+            Review asli dari pengguna untuk keputusan yang lebih baik.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="py-24 px-4">
         <motion.div
