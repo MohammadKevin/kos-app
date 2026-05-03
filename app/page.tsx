@@ -212,31 +212,28 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-24 px-4">
         <motion.div 
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
-          className="max-w-7xl mx-auto bg-black rounded-[48px] p-12 md:p-24 text-center text-white relative overflow-hidden"
+          className="max-w-7xl mx-auto bg-gradient-to-br from-gray-500 to-gray-800 rounded-[48px] p-12 md:p-24 text-center text-white relative overflow-hidden"
         >
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-6xl font-black mb-8">Jadi Mitra KosFinder?</h2>
+            <h2 className="text-4xl md:text-6xl font-black mb-8">Ingin mencari kost?</h2>
             <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto font-medium">
-              Kelola kost Anda dengan lebih profesional dan jangkau ribuan pencari kost setiap harinya.
+              Bergabunglah dengan jutaan pengguna yang telah menemukan kost impian mereka dengan mudah dan cepat melalui platform kami yang terpercaya.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button className="bg-white text-black px-10 py-5 rounded-full font-bold hover:bg-gray-100 transition-all">
-                Daftar Sebagai Owner
+                Daftar Sekarang
               </button>
             </div>
           </div>
-          {/* Subtle Grid Background */}
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', size: '20px 20px' }}></div>
         </motion.div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-white border-t border-gray-50 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
