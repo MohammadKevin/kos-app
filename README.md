@@ -12,19 +12,19 @@
 
 ---
 
-## 📌 Overview
+## Overview
 A feature-rich web platform for students and professionals to discover, filter, compare, and book boarding rooms (kost) with ease.
 
 ---
 
-## ✨ Key Features
+## Key Features
 - Room search with price range, facility, and location filters
 - Redux Toolkit state management for booking flow and saved favorites
 - Interactive photo carousel and detailed room dimension specifications
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Framework**: Next.js
 - **State**: Redux Toolkit
 - **Language**: TypeScript
@@ -32,7 +32,7 @@ A feature-rich web platform for students and professionals to discover, filter, 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```text
 kos-app/
 ├── app/
@@ -42,7 +42,7 @@ kos-app/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 Make sure you have the required runtimes and tools installed on your machine:
@@ -59,7 +59,7 @@ npm run dev
 
 ---
 
-## 👤 Author
+## Author
 **Mohammad Kevin Arif Rudianto**
 - **GitHub:** [@MohammadKevin](https://github.com/MohammadKevin)
 - **Portfolio:** [portfolio-mohammadkevin.vercel.app](https://portfolio-mohammadkevin.vercel.app)
@@ -68,9 +68,9 @@ npm run dev
 
 ---
 
-## 📄 License
+## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 <div align="center">
-⭐️ If you found this repository useful, please consider giving it a star!
+If you found this repository useful, please consider giving it a star!
 </div>
