@@ -18,9 +18,9 @@ A feature-rich web platform for students and professionals to discover, filter, 
 ---
 
 ## ✨ Key Features
-- ⚡ **Room search with price range, facility, and location filters**: Room search with price range, facility, and location filters
-- ⚡ **Redux Toolkit state management for booking flow and saved favorites**: Redux Toolkit state management for booking flow and saved favorites
-- ⚡ **Interactive photo carousel and detailed room dimension specifications**: Interactive photo carousel and detailed room dimension specifications
+- Room search with price range, facility, and location filters
+- Redux Toolkit state management for booking flow and saved favorites
+- Interactive photo carousel and detailed room dimension specifications
 
 ---
 
